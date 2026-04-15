@@ -60,7 +60,7 @@ function HeroSection() {
   return (
     <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
       <ThreeBackground />
-      <Container className="relative z-10 flex flex-col items-center gap-spacing-xl text-center">
+      <Container className="relative z-10 flex flex-col items-center gap-10 text-center">
         <MicroLabel>Platform Access</MicroLabel>
         <DisplayHeading>
           Private Equity.
@@ -83,7 +83,7 @@ function MetricsSection() {
   return (
     <Section>
       <Container>
-        <div className="grid grid-cols-1 gap-spacing-md sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {metrics.map((m) => (
             <MetricCard key={m.label} {...m} />
           ))}
@@ -99,19 +99,19 @@ function CTASection() {
   return (
     <Section padding="lg">
       <Container>
-        <div className="relative grid grid-cols-1 gap-spacing-2xl lg:grid-cols-2">
+        <div className="relative grid grid-cols-1 gap-16 lg:grid-cols-2">
           {/* Gradient divider — visible on desktop */}
           <div className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-px lg:block">
             <div className="h-full w-full bg-gradient-to-b from-transparent via-border-glow to-transparent" />
           </div>
 
           {/* Individuals */}
-          <div className="flex flex-col items-center gap-spacing-xl text-center">
+          <div className="flex flex-col items-center gap-10 text-center">
             <SectionHeading>For Individuals</SectionHeading>
             <LeadText>
               Start investing in private equity with as little as $10,000.
             </LeadText>
-            <div className="flex flex-wrap items-center justify-center gap-spacing-sm">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <PrimaryButton>Download App</PrimaryButton>
               <GlassButton>Request Access</GlassButton>
             </div>
@@ -119,32 +119,24 @@ function CTASection() {
           </div>
 
           {/* Institutions */}
-          <div className="flex flex-col items-center gap-spacing-xl text-center">
+          <div className="flex flex-col items-center gap-10 text-center">
             <SectionHeading>For Institutions</SectionHeading>
             <LeadText>
               Distribute private equity products through our platform.
             </LeadText>
-            <div className="flex flex-wrap items-center justify-center gap-spacing-sm">
+            <div className="flex flex-wrap items-center justify-center gap-4">
               <PrimaryButton>Book a Demo</PrimaryButton>
               <GlassButton>Become a Partner</GlassButton>
             </div>
-            <div className="flex items-center gap-spacing-xs text-sm text-foreground-tertiary">
-              <ShieldIcon />
+            <div className="flex items-center gap-3 text-sm text-foreground-tertiary">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+              </svg>
               <span>SEC Registered · SOC 2 Compliant</span>
             </div>
           </div>
         </div>
       </Container>
     </Section>
-  );
-}
-
-/* ── Icons ───────────────────────────────────────────────── */
-
-function ShieldIcon() {
-  return (
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-    </svg>
   );
 }

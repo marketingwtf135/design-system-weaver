@@ -12,14 +12,17 @@ export function MetricCard({ label, value, sublabel, className }: MetricCardProp
   return (
     <div
       className={cn(
-        "flex flex-col items-center gap-spacing-xs rounded-2xl p-spacing-xl text-center",
-        "glass-surface glass-surface-hover",
-        "transition-[var(--transition-fast)] cursor-default",
+        "flex flex-col items-center gap-3 rounded-2xl p-10 text-center",
+        "border border-border bg-glass-bg backdrop-blur-[20px]",
+        "transition-all duration-300 ease-in-out cursor-default",
+        "hover:bg-glass-hover hover:border-border-hover",
         className
       )}
     >
       <MicroLabel>{label}</MicroLabel>
-      <span className="text-metric text-foreground">{value}</span>
+      <span className="text-[2.5rem] font-light tracking-[-0.03em] tabular-nums text-foreground">
+        {value}
+      </span>
       {sublabel && (
         <span className="text-sm text-foreground-tertiary">{sublabel}</span>
       )}

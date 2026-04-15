@@ -6,24 +6,15 @@ interface AvatarGroupProps {
   className?: string;
 }
 
-const avatarColors = [
-  "bg-foreground-secondary",
-  "bg-foreground-tertiary",
-  "bg-accent",
-  "bg-border-hover",
-];
-
 export function AvatarGroup({ count = 4, label, className }: AvatarGroupProps) {
   return (
-    <div className={cn("flex items-center gap-spacing-sm", className)}>
+    <div className={cn("flex items-center gap-4", className)}>
       <div className="flex -space-x-2">
         {Array.from({ length: count }).map((_, i) => (
           <div
             key={i}
-            className={cn(
-              "h-8 w-8 rounded-full border-2 border-background",
-              avatarColors[i % avatarColors.length]
-            )}
+            className="h-8 w-8 rounded-full border-2 border-background bg-foreground-secondary"
+            style={{ opacity: 1 - i * 0.15 }}
           />
         ))}
       </div>

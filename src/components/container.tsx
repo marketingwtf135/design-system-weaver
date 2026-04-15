@@ -9,8 +9,7 @@ export function Container({ children, className }: ContainerProps) {
   return (
     <div
       className={cn(
-        "mx-auto w-full max-w-[var(--container-max)] px-[var(--container-padding)]",
-        "max-md:px-spacing-md",
+        "mx-auto w-full max-w-[1440px] px-16 max-md:px-6",
         className
       )}
     >
