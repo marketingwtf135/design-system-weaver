@@ -7,9 +7,9 @@ interface SectionProps {
 }
 
 const paddingMap = {
-  sm: "py-spacing-2xl",
-  md: "py-spacing-3xl",
-  lg: "py-spacing-4xl",
+  sm: "py-16",
+  md: "py-24",
+  lg: "py-32",
 } as const;
 
 export function Section({ children, className, padding = "md" }: SectionProps) {

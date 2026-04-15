@@ -67,30 +67,10 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-
-  /* Spacing scale */
-  --spacing-xs: 0.75rem;
-  --spacing-sm: 1rem;
-  --spacing-md: 1.5rem;
-  --spacing-lg: 2rem;
-  --spacing-xl: 2.5rem;
-  --spacing-2xl: 4rem;
-  --spacing-3xl: 6rem;
-  --spacing-4xl: 8rem;
-
-  /* Container */
-  --container-max: 1440px;
-  --container-padding: 4rem;
-
-  /* Animations */
-  --ease-smooth: cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-fast: all 0.3s ease;
 }
 
 /*
  * Dark-first palette — Axevil is dark-only.
- * Light :root values set to the same dark palette for consistency.
  */
 :root {
   --radius: 0.625rem;
@@ -151,9 +131,6 @@
   --sidebar-accent-foreground: oklch(1 0 0);
   --sidebar-border: oklch(1 0 0 / 8%);
   --sidebar-ring: oklch(1 0 0 / 20%);
-
-  /* Pill radius */
-  --radius-pill: 100px;
 }
 
 @layer base {
@@ -169,92 +146,8 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
-  /* Ticker infinite scroll */
   @keyframes ticker-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
-  }
-}
-
-@layer utilities {
-  /* Typography presets — consolidated from 6 scattered style objects */
-  .text-display {
-    font-size: 5.5rem;
-    font-weight: 600;
-    letter-spacing: -0.04em;
-    line-height: 1.05;
-  }
-
-  .text-section {
-    font-size: 2.5rem;
-    font-weight: 500;
-    letter-spacing: -0.03em;
-    line-height: 1.2;
-  }
-
-  .text-lead {
-    font-size: 1.25rem;
-    font-weight: 400;
-    letter-spacing: -0.01em;
-    line-height: 1.5;
-  }
-
-  .text-body {
-    font-size: 1.1rem;
-    font-weight: 500;
-    letter-spacing: -0.01em;
-    line-height: 1.5;
-  }
-
-  .text-micro {
-    font-size: 0.75rem;
-    font-weight: 600;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-  }
-
-  .text-metric {
-    font-size: 2.5rem;
-    font-weight: 300;
-    letter-spacing: -0.03em;
-    font-variant-numeric: tabular-nums;
-  }
-
-  /* Glass surface */
-  .glass-surface {
-    background-color: var(--color-glass-bg);
-    border: 1px solid var(--color-border);
-    backdrop-filter: blur(20px);
-  }
-
-  .glass-surface-hover:hover {
-    background-color: var(--color-glass-hover);
-    border-color: var(--color-border-hover);
-  }
-
-  /* Gradient text clip */
-  .text-gradient {
-    background: linear-gradient(180deg, oklch(1 0 0) 0%, oklch(1 0 0 / 60%) 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-  }
-
-  /* Ticker animation */
-  .animate-ticker {
-    animation: ticker-scroll 30s linear infinite;
-  }
-
-  /* Responsive display heading */
-  @media (max-width: 768px) {
-    .text-display {
-      font-size: 2.5rem;
-    }
-  }
-
-  @media (min-width: 769px) and (max-width: 1024px) {
-    .text-display {
-      font-size: 4rem;
-    }
   }
 }
