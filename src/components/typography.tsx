@@ -9,7 +9,7 @@ interface TypographyProps {
 export function DisplayHeading({ children, className }: TypographyProps) {
   return (
     <h1
-      className={cn("text-[5.5rem] max-md:text-[2.5rem] md:max-lg:text-[4rem] font-semibold leading-[1.05] tracking-[-0.04em]", className)}
+      className={cn("text-[5.5rem] max-sm:text-[2.5rem] sm:max-lg:text-[4rem] font-semibold leading-[1.05] tracking-[-0.04em]", className)}
       style={{
         background: "linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.6) 100%)",
         WebkitBackgroundClip: "text",
