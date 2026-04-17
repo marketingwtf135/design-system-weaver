@@ -232,10 +232,10 @@ function DesignSystemPage() {
             <div className="flex flex-col gap-3">
               <MicroLabel>Glass surface, hover border glow, micro label + metric value + sublabel</MicroLabel>
               <div className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
-                <MetricCard label="Assets Under Management" value="$150M+" sublabel="Across all funds" />
-                <MetricCard label="Active Investors" value="1,000+" sublabel="Verified accounts" />
-                <MetricCard label="Active Positions" value="33" sublabel="Current portfolio" />
-                <MetricCard label="Partner Network" value="150+" sublabel="Global partners" />
+                <MetricCard label="Assets Under Management" value="$150M+" />
+                <MetricCard label="Active Investors" value="1,000+" />
+                <MetricCard label="Active Positions" value="33" />
+                <MetricCard label="Partner Network" value="150+" />
               </div>
             </div>
           </StyleGuideSection>
