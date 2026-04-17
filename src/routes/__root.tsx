@@ -38,7 +38,7 @@ export const Route = createRootRoute({
       { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap",
+        href: "https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600;700&display=swap",
       },
       {
         rel: "stylesheet",
@@ -66,5 +66,16 @@ function RootShell({ children }: { children: React.ReactNode }) {
 }
 
 function RootComponent() {
-  return <Outlet />;
+  return (
+    <>
+      <header className="fixed top-0 left-0 right-0 z-50 flex items-center h-16 bg-white/5 backdrop-blur-xl border-b border-white/10">
+        <div className="mx-auto w-full max-w-[1440px] px-16 max-md:px-6 flex justify-center">
+          <Link to="/" className="inline-block">
+            <img src="/logo.svg" alt="Axevil" className="h-4" />
+          </Link>
+        </div>
+      </header>
+      <Outlet />
+    </>
+  );
 }

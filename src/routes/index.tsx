@@ -1,21 +1,22 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { Container } from "@/components/container";
 import { Section } from "@/components/section";
-import { DisplayHeading, LeadText, MicroLabel, SectionHeading } from "@/components/typography";
+import { DisplayHeading, LeadText, SectionHeading } from "@/components/typography";
 import { PrimaryButton, GlassButton } from "@/components/buttons";
 import { MetricCard } from "@/components/metric-card";
 import { Ticker } from "@/components/ticker";
 import { AvatarGroup } from "@/components/avatar-group";
-import { ThreeBackground } from "@/components/three-background";
+import { HeroImage } from "@/components/hero-image";
+import { Typewriter } from "@/components/typewriter";
 
 export const Route = createFileRoute("/")({
   component: HomePage,
   head: () => ({
     meta: [
       { title: "Axevil — Private Equity. Reinvented." },
-      { name: "description", content: "Access institutional-grade private equity investments. $150M+ AUM, 1000+ investors, 33 active positions." },
+      { name: "description", content: "A technology platform for private equity — for professional investors and wealth managers." },
       { property: "og:title", content: "Axevil — Private Equity. Reinvented." },
-      { property: "og:description", content: "Access institutional-grade private equity investments." },
+      { property: "og:description", content: "A technology platform for private equity." },
       { property: "og:type", content: "website" },
     ],
   }),
@@ -24,21 +25,23 @@ export const Route = createFileRoute("/")({
 /* ── Data ────────────────────────────────────────────────── */
 
 const tickerItems = [
-  { name: "Sequoia Capital", status: "open" as const, statusLabel: "Open" },
-  { name: "Andreessen Horowitz", status: "coming-soon" as const, statusLabel: "Coming Soon" },
-  { name: "Benchmark", status: "open" as const, statusLabel: "Open" },
+  { name: "Anthropic", status: "coming-soon" as const, statusLabel: "Coming Soon" },
+  { name: "SpaceX", status: "open" as const, statusLabel: "Open" },
   { name: "Accel Partners", status: "closed" as const, statusLabel: "Closed" },
   { name: "Lightspeed Ventures", status: "open" as const, statusLabel: "Open" },
   { name: "Greylock Partners", status: "coming-soon" as const, statusLabel: "Coming Soon" },
   { name: "Founders Fund", status: "open" as const, statusLabel: "Open" },
   { name: "NEA", status: "closed" as const, statusLabel: "Closed" },
+  { name: "Sequoia Capital", status: "open" as const, statusLabel: "Open" },
+  { name: "Andreessen Horowitz", status: "coming-soon" as const, statusLabel: "Coming Soon" },
+  { name: "Benchmark", status: "open" as const, statusLabel: "Open" },
 ];
 
 const metrics = [
-  { label: "Assets Under Management", value: "$150M+", sublabel: "Across all funds" },
-  { label: "Active Investors", value: "1,000+", sublabel: "Verified accounts" },
-  { label: "Active Positions", value: "33", sublabel: "Current portfolio" },
-  { label: "Partner Network", value: "150+", sublabel: "Global partners" },
+  { label: "AUM", value: "$150M+" },
+  { label: "Investors", value: "1.000+" },
+  { label: "Portfolio companies", value: "33" },
+  { label: "WM partners", value: "150+" },
 ];
 
 /* ── Page ────────────────────────────────────────────────── */
@@ -58,20 +61,27 @@ function HomePage() {
 
 function HeroSection() {
   return (
-    <section className="relative flex min-h-screen items-center justify-center overflow-hidden">
-      <ThreeBackground />
-      <Container className="relative z-10 flex flex-col items-center gap-10 text-center">
-        <MicroLabel>Platform Access</MicroLabel>
-        <DisplayHeading>
+    <section className="relative flex min-h-screen items-center overflow-hidden">
+      <HeroImage />
+      <Container className="relative z-10 flex flex-col items-start gap-[50px]">
+        <DisplayHeading className="animate-fade-up opacity-0 [animation-delay:200ms] [animation-fill-mode:forwards]">
           Private Equity.
           <br />
           Reinvented.
         </DisplayHeading>
-        <LeadText className="max-w-xl">
-          Access institutional-grade private equity investments previously
-          reserved for the ultra-wealthy.
+        <LeadText className="relative max-w-[576px] animate-fade-up opacity-0 [animation-delay:500ms] [animation-fill-mode:forwards]">
+          <Typewriter
+            segments={[
+              { text: "A technology platform for private equity —\nfor " },
+              { text: "professional investors", className: "text-white" },
+              { text: " and " },
+              { text: "wealth managers.", className: "text-white" },
+            ]}
+          />
         </LeadText>
-        <PrimaryButton>Request Access</PrimaryButton>
+        <PrimaryButton className="h-[68px] w-[270px] text-[1.05rem] animate-fade-up opacity-0 [animation-delay:800ms] [animation-fill-mode:forwards]">
+          Request Access
+        </PrimaryButton>
       </Container>
     </section>
   );
@@ -102,14 +112,14 @@ function CTASection() {
         <div className="relative grid grid-cols-1 gap-16 lg:grid-cols-2">
           {/* Gradient divider — visible on desktop */}
           <div className="pointer-events-none absolute inset-y-0 left-1/2 hidden w-px lg:block">
-            <div className="h-full w-full bg-gradient-to-b from-transparent via-border-glow to-transparent" />
+            <div className="h-full w-full bg-gradient-to-b from-transparent via-white/20 to-transparent" />
           </div>
 
-          {/* Individuals */}
+          {/* Investors */}
           <div className="flex flex-col items-center gap-10 text-center">
-            <SectionHeading>For Individuals</SectionHeading>
+            <SectionHeading>For Investors</SectionHeading>
             <LeadText>
-              Start investing in private equity with as little as $10,000.
+              Your private equity allocation starts here.
             </LeadText>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <PrimaryButton>Download App</PrimaryButton>
@@ -118,11 +128,11 @@ function CTASection() {
             <AvatarGroup count={4} label="Join 1,000+ investors" />
           </div>
 
-          {/* Institutions */}
+          {/* Wealth Managers */}
           <div className="flex flex-col items-center gap-10 text-center">
-            <SectionHeading>For Institutions</SectionHeading>
+            <SectionHeading>For Wealth Managers</SectionHeading>
             <LeadText>
-              Distribute private equity products through our platform.
+              The infrastructure your private equity practice deserves.
             </LeadText>
             <div className="flex flex-wrap items-center justify-center gap-4">
               <PrimaryButton>Book a Demo</PrimaryButton>

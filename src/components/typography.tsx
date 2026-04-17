@@ -9,13 +9,11 @@ interface TypographyProps {
 export function DisplayHeading({ children, className }: TypographyProps) {
   return (
     <h1
-      className={cn("text-[5.5rem] max-sm:text-[2.5rem] sm:max-lg:text-[4rem] font-semibold leading-[1.05] tracking-[-0.04em]", className)}
-      style={{
-        background: "linear-gradient(180deg, #ffffff 0%, rgba(255,255,255,0.6) 100%)",
-        WebkitBackgroundClip: "text",
-        WebkitTextFillColor: "transparent",
-        backgroundClip: "text",
-      }}
+      className={cn(
+        "text-[7rem] max-sm:text-[3rem] sm:max-lg:text-[5rem]",
+        "font-medium leading-[1] tracking-[-2px] text-white",
+        className
+      )}
     >
       {children}
     </h1>
@@ -32,7 +30,7 @@ export function SectionHeading({ children, className, as: Tag = "h2" }: Typograp
 
 export function LeadText({ children, className }: TypographyProps) {
   return (
-    <p className={cn("text-[1.25rem] font-normal leading-[1.5] tracking-[-0.01em] text-foreground-secondary", className)}>
+    <p className={cn("text-[1.45rem] font-normal leading-[1.4] tracking-[-0.02em] text-foreground-secondary", className)}>
       {children}
     </p>
   );

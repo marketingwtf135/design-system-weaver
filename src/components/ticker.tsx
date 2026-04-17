@@ -34,7 +34,7 @@ export function Ticker({ items, className }: TickerProps) {
   return (
     <div
       className={cn(
-        "relative w-full overflow-hidden border-y border-border py-4",
+        "group relative w-full overflow-hidden bg-white/5 border-y border-white/8 py-6",
         className
       )}
     >
@@ -43,7 +43,9 @@ export function Ticker({ items, className }: TickerProps) {
       <div className="pointer-events-none absolute inset-y-0 right-0 z-10 w-32 bg-gradient-to-l from-background to-transparent" />
 
       {/* Scrolling track — duplicated for seamless loop */}
-      <div className="flex" style={{ animation: "ticker-scroll 30s linear infinite" }}>
+      <div
+        className="flex ticker-track group-hover:ticker-slow"
+      >
         <TickerRow items={items} />
         <TickerRow items={items} />
       </div>

@@ -74,7 +74,7 @@
  */
 :root {
   --radius: 0.625rem;
-  --font-sans: "Inter", system-ui, -apple-system, sans-serif;
+  --font-sans: "Inter Tight", system-ui, -apple-system, sans-serif;
 
   /* Core palette */
   --background: oklch(0 0 0);
@@ -146,8 +146,81 @@
     -moz-osx-font-smoothing: grayscale;
   }
 
+  .ticker-track {
+    animation: ticker-scroll 20s linear infinite;
+  }
+
+  .ticker-slow {
+    animation-duration: 45s;
+  }
+
   @keyframes ticker-scroll {
     0% { transform: translateX(0); }
     100% { transform: translateX(-50%); }
+  }
+
+  @keyframes blink {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0; }
+  }
+
+  .animate-blink {
+    animation: blink 1s step-end infinite;
+  }
+
+  @keyframes hero-reveal {
+    from {
+      opacity: 0;
+      filter: blur(20px);
+      transform: scale(1.05);
+    }
+    to {
+      opacity: 1;
+      filter: blur(0px);
+      transform: scale(1);
+    }
+  }
+
+  .animate-hero-reveal {
+    animation: hero-reveal 1.4s cubic-bezier(0.16, 1, 0.3, 1) 100ms;
+  }
+
+  @keyframes fade-up {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .animate-fade-up {
+    animation: fade-up 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes hero-flare {
+    0%, 100% { --flare-x: 65%; --flare-y: 5%;  }
+    25%      { --flare-x: 78%; --flare-y: 20%; }
+    50%      { --flare-x: 55%; --flare-y: 10%; }
+    75%      { --flare-x: 75%; --flare-y: 28%; }
+  }
+
+  @property --flare-x {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 68%;
+  }
+
+  @property --flare-y {
+    syntax: "<percentage>";
+    inherits: false;
+    initial-value: 10%;
+  }
+
+  @keyframes card-shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
   }
 }

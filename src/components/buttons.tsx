@@ -29,13 +29,17 @@ export function GlassButton({ children, className, ...props }: ButtonProps) {
     <button
       className={cn(
         "inline-flex items-center justify-center gap-2",
-        "rounded-full border border-border bg-glass-bg backdrop-blur-[20px]",
+        "rounded-full border border-white/15",
         "px-8 py-4 text-sm font-semibold text-foreground",
         "transition-all duration-400 ease-[cubic-bezier(0.16,1,0.3,1)]",
-        "hover:scale-105 hover:bg-glass-hover hover:border-border-hover",
+        "hover:scale-105 hover:border-white/30",
         "active:scale-[0.98]",
         className
       )}
+      style={{
+        backgroundImage:
+          "linear-gradient(78deg, rgba(70,70,70,0.1) 7%, rgba(192,192,192,0.1) 54%, rgba(72,72,72,0.1) 100%)",
+      }}
       {...props}
     >
       {children}
